@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudharshan Hariharan - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --text-color: #1f2937;
+            --background-light: #f8fafc;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --border-radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        header {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            display: block;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: var(--shadow);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-color), #1d4ed8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            color: #64748b;
+        }
+
+        .contact-info {
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            color: #64748b;
+        }
+
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+        }
+
+        section:nth-child(even) {
+            background-color: white;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--text-color);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-category h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .skill-category ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .skill-category li {
+            padding: 0.5rem 0;
+            color: #64748b;
+        }
+
+        /* Experience Cards */
+        .experience-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .position {
+            color: var(--primary-color);
+            font-weight: 500;
+            margin: 0.5rem 0;
+        }
+
+        .duration {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .experience-item ul {
+            margin-left: 1.5rem;
+            color: #64748b;
+        }
+
+        .experience-item li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Projects Section */
+        .project-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 1.5rem;
+        }
+
+        .project-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .project-item p {
+            color: #64748b;
+        }
+
+        /* Education Section */
+        .education-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 1.5rem;
+        }
+
+        .education-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .education-item p {
+            color: #64748b;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.75rem; }
+            .container { padding: 0 1rem; }
+        }
+        /* Add this AFTER your existing styles BUT BEFORE the media queries */
+/* ===== Awards Section ===== */
+     .awards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.award-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.award-item:hover {
+    transform: translateY(-5px);
+}
+
+.image-container {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8fafc;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    flex-shrink: 0;
+}
+
+.award-image {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.award-content {
+    flex: 1;
+}
+
+.issuer {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+}
+
+.date {
+    color: #94a3b8;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.credly-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.credly-link:hover {
+    background: #1d4ed8;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="Sudharshan.webp" alt="Sudharshan Hariharan" class="profile-image">
+            <h1>Sudharshan Hariharan</h1>
+            <p class="contact-info">
+                sudharsh2k@gmail.com | 226-961-0509 | Windsor, ON | 
+                <a href="https://www.linkedin.com/in/sudharshan-hariharan-5a9b171a1/" target="_blank">LinkedIn</a>
+            </p>
+            <p>Solutions-driven professional with a Master's in Electrical and Computer Engineering, specializing in system architecture and digital transformation. Advanced expertise in computer networks, electric vehicle systems, and computational engineering, with proven experience delivering strategic technology solutions for enterprise clients.</p>
+        </div>
+    </header>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>SAP Technologies</h4>
+                    <ul>
+                        <li>SAP BASIS</li>
+                        <li>SAP ABAP</li>
+                        <li>SAP Security</li>
+                        <li>Fiori</li>
+                        <li>SAP Analytics Cloud</li>
+                        <li>EY SAP Learning</li>
+                        <li>EY Analytics (Data Science)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Programming & Scripting</h4>
+                    <ul>
+                        <li>Python</li>
+                        <li>Bash</li>
+                        <li>ABAP</li>
+                        <li>JavaScript</li>
+                        <li>SQL</li>
+                        <li>Java</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Cloud Computing & Networking</h4>
+                    <ul>
+                        <li>AWS</li>
+                        <li>Microsoft Azure</li>
+                        <li>Google Cloud Platform (GCP)</li>
+                        <li>Kubernetes</li>
+                        <li>Docker Swarm</li>
+                        <li>Hadoop</li>
+                        <li>Virtualization (Hyper-V/VMware)</li>
+                        <li>Container Orchestration (Kubernetes/OpenShift)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Engineering Tools & Practices</h4>
+                    <ul>
+                        <li>Circuit Design</li>
+                        <li>Digital Systems</li>
+                        <li>Control Systems</li>
+                        <li>Energy Conversion Systems</li>
+                        <li>Computational Modelling</li>
+                        <li>Power Management in EVs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2>Professional Experience</h2>
+            <div class="experience-item">
+                <h3>EY India, LLP</h3>
+                <p class="position">SAP BASIS and Security Consultant</p>
+                <p class="duration">July 2021 – July 2023</p>
+                <ul>
+                    <li>Spearheaded SAP system performance optimization through advanced BASIS administration, implementing proactive monitoring and performance tuning strategies that elevated system stability and operational efficiency.</li>
+                    <li>Successfully led critical SAP S/4HANA cloud migration initiatives, achieving 15% reduction in system downtime while ensuring zero data loss and maintaining business continuity throughout the transition.</li>
+                    <li>Architected and implemented comprehensive security frameworks including role-based access control matrices, significantly enhancing system security posture and mitigating potential vulnerabilities.</li>
+                    <li>Designed and deployed Firefighter role configurations within GRC, optimizing emergency access management and strengthening overall governance structure.</li>
+                    <li>Engineered automated solutions for system maintenance workflows, including backup procedures and sandbox refresh processes, resulting in 40% reduction in manual operations and improved resource utilization.</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h3>Ashok Leyland Ltd, India</h3>
+                <p class="position">Automotive Engineering – Student Intern</p>
+                <p class="duration">May 2019 – June 2019</p>
+                <ul>
+                    <li>Explored cross-functional collaboration between R&D, production, and project planning, understanding their role in vehicle electrification and system integration.</li>
+                    <li>Observed key manufacturing processes, including engine assembly, milling, and shaft assembly, to understand their impact on powertrain development and vehicle performance.</li>
+                    <li>Developed insights into organizational structure, engineering workflows, and emerging trends in vehicle technology, with a perspective on the transition to electrified powertrains.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>Masters of Engineering - Electrical and Computer Engineering</h3>
+                <p class="duration">University of Windsor - Windsor, ON | December 2024</p>
+            </div>
+            <div class="education-item">
+                <h3>Bachelor of Engineering - Electronics and Communications Engineering</h3>
+                <p class="duration">Anna University - Chennai, India | May 2021</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Academic Projects</h2>
+            
+            <div class="project-item">
+                <h3>Interior Permanent Magnet Synchronous Motor (PMSM) Design</h3>
+                <p>Optimized PMSM design through electromagnetic simulations (ANSYS, JMAG), developing 2D/3D models for stator, rotor, and magnet configurations to maximize torque output. Validated design through thermal and structural FEA analysis, leading iterative optimization process to balance performance and cost-effectiveness.</p>
+            </div>
+    
+            <div class="project-item">
+                <h3>High end access control system</h3>
+                <p>Developed a high-end access control system for a pharmaceutical giant's problem statement, leveraging multi-factor authentication (biometric verification, RFID, and facial recognition via OpenCV). Engineered a real-time image processing pipeline using OpenCV on Raspberry Pi to enable efficient camera-based facial detection and authentication, optimizing frame rates for low-latency performance.</p>
+            </div>
+    
+            <div class="project-item">
+                <h3>Calamity Detection & Alert System Using Wireless Sensor Networks (WSN)</h3>
+                <p>Designed and implemented a real-time environmental monitoring system leveraging Wireless Sensor Networks (WSN) to detect anomalies in physical parameters (temperature, humidity, gas levels) for early disaster detection and achieved 95% data accuracy.</p>
+            </div>
+    
+            <div class="project-item">
+                <h3>Adaptive Cruise Control System Development with Arduino and MATLAB</h3>
+                <p>Developed an Adaptive Cruise Control (ACC) prototype using Arduino Uno and MATLAB to autonomously adjust vehicle speed based on real-time ultrasonic sensor data, ensuring safe following distances. The system features speed customization, cruise control (maintaining preset speeds), and adaptive modes (dynamic speed adjustment with obstacle detection), displayed via an interactive LCD. The prototype demonstrated collision avoidance by reducing speed during obstacles and resuming preset speeds post-clearance, with potential applications in school buses and Formula 1 pit-stop safety. This project highlights expertise in embedded systems, sensor integration, MATLAB-Arduino communication, and real-time algorithm design, emphasizing practical solutions for autonomous transportation safety and efficiency.</p>
+            </div>
+        </div>
+    </section>
+    <section id="awards">
+        <div class="container">
+            <h2>Awards & badges</h2>
+            <div class="awards-grid">
+                <!-- Sample Award 1 - Replace with your actual credentials -->
+                <div class="award-item">
+                    <img src="Analytics.png" alt="EY Data Science" class="award-image">
+                    <div class="award-content">
+                        <h3>EY Analytics - Data science</h3>
+                        <p class="issuer">EY</p>
+                        <p class="date">Issued Jun 2023</p>
+                        <a href="https://www.credly.com/badges/e3774b7a-d3c6-4868-8d2d-0066d48e0ac4/linked_in_profile" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="credly-link">
+                            View Credential
+                        </a>
+                    </div>
+                </div>
+    
+                <!-- Sample Award 2 -->
+                <div class="award-item">
+                    <img src="Quantum computing.png" alt="EY Quantum computing" class="award-image">
+                    <div class="award-content">
+                        <h3>EY Quantum computing - Learning</h3>
+                        <p class="issuer">EY</p>
+                        <p class="date">Issued Jan 2022</p>
+                        <a href="https://www.credly.com/badges/bcc671e9-239c-4b80-9b27-7546514e7f5a?source=linked_in_profile" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="credly-link">
+                            View Credential
+                        </a>
+                    </div>
+                </div>
+    
+                <!-- Sample Award 3 -->
+                <div class="award-item">
+                    <img src="SAP foundation.png" alt="EY SAP" class="award-image">
+                    <div class="award-content">
+                        <h3>EY SAP - Foundation - Learning</h3>
+                        <p class="issuer">EY</p>
+                        <p class="date">Issued Dec 2021</p>
+                        <a href="https://www.credly.com/badges/94e76bb3-7a1e-442b-b6c6-81589124c3fa?source=linked_in_profile" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="credly-link">
+                            View Credential
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
